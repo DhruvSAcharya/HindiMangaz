@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "473653803304",
+    "firebase_url": "https://hindimangaz-7d4c9.firebaseio.com",
+    "project_id": "hindimangaz-7d4c9",
+    "storage_bucket": "hindimangaz-7d4c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473653803304:android:8b6cb680d44fd29ea6381d",
+        "android_client_info": {
+          "package_name": "com.example.comics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473653803304-eul3vboba0mfgiltk69fm073l021cp33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxcCmyNBlA3UK55UfooDVUWf7K27m9Tk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473653803304-eul3vboba0mfgiltk69fm073l021cp33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
