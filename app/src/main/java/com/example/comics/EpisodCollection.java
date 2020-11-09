@@ -72,15 +72,18 @@ public class EpisodCollection extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            //db.collection("Mangas").document(subcolname).collection(subcolname).document("te")
+
                             String text = listView.getItemAtPosition(position).toString();
                             Toast.makeText(getApplicationContext(), "text: "+text, Toast.LENGTH_SHORT).show();
                             Toast.makeText(EpisodCollection.this, "subcolname: "+subcolname, Toast.LENGTH_SHORT).show();
-                            DocumentReference docref = db.collection("Mangas").document(subcolname).collection(subcolname).document("text");
+                            DocumentReference docref = db.collection("Mangas").document(subcolname+"").collection(subcolname+"").document(text+"");
                             docref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                     if (task.isSuccessful()) {
                                         DocumentSnapshot document = task.getResult();
+                                        Toast.makeText(EpisodCollection.this, "data of doc "+document.getData(), Toast.LENGTH_SHORT).show();
                                         if (document != null) {
                                             String link = document.getString("l");
 

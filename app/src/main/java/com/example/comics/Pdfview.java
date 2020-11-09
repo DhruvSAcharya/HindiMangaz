@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 
@@ -27,7 +28,9 @@ public class Pdfview extends AppCompatActivity {
             Intent intent = getIntent();
             String pdf_url = intent.getStringExtra("link");
             Toast.makeText(this, "link: "+pdf_url, Toast.LENGTH_SHORT).show();
+            webView.getSettings().setJavaScriptEnabled(true);
             webView.loadUrl(pdf_url);
+            webView.setWebViewClient(new WebViewClient());
 
 
 
