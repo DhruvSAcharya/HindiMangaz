@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Comics">
+        <activity android:name=".homepage.Home"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-3940256099942544~3347511713" />
 
-        <activity android:name=".EpisodCollection"></activity>
+        <activity android:name=".EpisodCollection" />
         <activity android:name=".SeriesCollection" />
         <activity android:name=".Pdfview" />
         <activity android:name=".MainActivity">
