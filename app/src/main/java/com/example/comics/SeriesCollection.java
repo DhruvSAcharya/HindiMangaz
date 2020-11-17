@@ -5,12 +5,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -90,17 +95,34 @@ public class SeriesCollection extends AppCompatActivity {
                                     //Log.d(TAG, document.getId() + " => " + document.getData());
                                     String title = document.getString("t");
                                     data.add(title);
-                                    Toast.makeText(SeriesCollection.this, "Title: "+title, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(SeriesCollection.this, "Title: "+title, Toast.LENGTH_SHORT).show();
 
                                 }
-                                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data);
+                                adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, data){
+                                    @NonNull
+                                    @Override
+                                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                                        View view = super.getView(position, convertView, parent);
+
+                                        TextView tv = (TextView) view.findViewById(android.R.id.text1);
+
+                                        // Set the text size 25 dip for ListView each item
+                                        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,23);
+                                        tv.setTextColor(Color.WHITE);
+                                        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+
+                                        // Return the view
+                                        return view;
+
+                                    }
+                                };
                                 listView.setAdapter(adapter);
 
                                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                         String text = listView.getItemAtPosition(position).toString();
-                                        Toast.makeText(SeriesCollection.this, "text: "+text, Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(SeriesCollection.this, "text: "+text, Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(),EpisodCollection.class);
                                         intent.putExtra("colname",text);
                                         startActivity(intent);

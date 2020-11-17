@@ -3,6 +3,7 @@
     package="com.example.comics">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+            android:value="ca-app-pub-7754027268475201~4725175500" />
 
         <activity android:name=".EpisodCollection" />
         <activity android:name=".SeriesCollection" />
